@@ -1,0 +1,137 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+
+#wrapper > form > div {
+  position: relative;
+}
+
+#wrapper > form > div:nth-child(1) {
+  width: 100%;
+  height: 140px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border: 2px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #9B9B9B;
+  margin-bottom: 16px;
+}
+
+#wrapper > form > div:nth-child(1):hover {
+  border: 2px solid #0275D8;
+}
+
+#wrapper > form > div:nth-child(1):hover > i, #wrapper > form > div:nth-child(1):hover p {
+  color: #0275D8;
+}
+
+#wrapper > form > div:nth-child(1) > * {
+  display: inline-block;
+}
+
+#wrapper > form > div:nth-child(1) > i {
+  font-size: 45px !important;
+  padding-right: 20px !important;
+}
+
+#wrapper > form > div:nth-child(1) > p {
+  line-height: 24px !important;
+}
+
+#wrapper > form > div:nth-child(1) > input {
+  cursor: pointer;
+  position: absolute;
+  height: 140px;
+  top: -9px;
+  opacity: 0;
+}
+
+#wrapper > form > div:nth-child(2) {
+  display: none;
+  width: 100%;
+  height: 52px;
+  color: white;
+  background-color: #F5A623;
+  line-height: 52px;
+  text-align: center;
+  font-size: 18px;
+}
+
+#wrapper > form > div:nth-child(2):before {
+  content: '\f071';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 10px;
+}
+
+#wrapper > form > div:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+#wrapper > form > div:nth-child(3) > div {
+  margin: 16px 0 24px;
+  width: 30%;
+  height: 0;
+  position: relative;
+  cursor: pointer;
+  border-radius: 8px;
+  padding-bottom: 30%;
+  background-size: cover;
+  background-position: center center;
+}
+
+#wrapper > form > div:nth-child(3) > div:hover > div {
+  display: block;
+}
+
+#wrapper > form > div:nth-child(3) > div > div {
+  width: 100%;
+  height: 40%;
+  display: none;
+  background-color: rgba(2, 117, 216, 0.7);
+  position: absolute;
+  bottom: 0;
+  border-bottom-left-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
+
+#wrapper > form > div:nth-child(3) > div > div:before {
+  content: '\f2ed';
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  padding-right: 10px;
+  color: white;
+  position: absolute;
+  font-size: 20px;
+  left: calc(50% - 10px);
+  top: calc(50% - 10px);
+}
+
+#wrapper > form > div:nth-child(3) > div:nth-child(2) {
+  margin: 16px 5% 24px;
+}
+/*# sourceMappingURL=step3.css.map */

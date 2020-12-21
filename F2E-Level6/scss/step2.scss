@@ -1,0 +1,36 @@
+@import '../scss/allMix.scss';
+
+
+
+#wrapper{
+
+    > form{
+        >label{
+            span{
+                font-size: 12px;
+                color: $disable;
+                padding-left: 7px;
+            }
+        }
+        > div{
+            @include flex(row);
+            justify-content: space-between;
+            &:nth-child(1), &:nth-child(5){
+                > div{
+                    width: 48%;
+                }
+            }
+            &:nth-child(3){
+                > div{
+                    width: 30%;
+                }
+            }
+            &:nth-child(6){
+                i{
+                    top: 17px !important;
+                }
+            }
+        }
+    }
+
+}

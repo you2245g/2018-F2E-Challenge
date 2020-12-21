@@ -1,0 +1,15 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Oswald-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'subTitle';
+  src: url("../font/Oswald-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Oswald-Light.ttf") format("truetype");
+}
+/*# sourceMappingURL=allMix.css.map */

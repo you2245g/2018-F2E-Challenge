@@ -1,0 +1,359 @@
+@import '../scss/allMix.scss';
+
+
+//上面選框
+.info{
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 15px;
+    //左按鈕區塊
+    label{
+        @include outward(43px,16px);
+        position: relative;
+        > i{
+            padding-left: 5px;
+        }
+        > .clickList{
+            display: none;
+            position: absolute;
+            z-index: 3;
+            width: 150px;
+            border-radius: 4px;
+            margin-top: 6px;
+            background-color: white;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 1px 2px 10px 0 $greyLv1;
+            > p{
+                &:hover, &.active{
+                    @include color($white,$black);
+                }
+            }
+        }
+    }
+
+    //右按鈕區塊
+    button{
+        @include color($white,$black);
+        @include outward(192px,34px);
+        @include flex(row);
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        cursor: pointer;
+        i{
+            font-size: 10px !important;
+            padding-left: 10px;
+        }
+        &:hover{
+            @include color($white,$greyLv1);
+        }
+    }
+
+}
+
+//table區塊
+table{
+    width: 100%;
+    thead{
+        @include color($black,$white);
+        @include font(16px,$subTitle);
+        > tr{
+            height: 40px;
+            > th{
+                text-align: center;
+                text-align: left;
+                &:nth-child(1){
+                    padding-left: 2%;
+                    width: 27%;
+                }       
+                &:nth-child(2),&:nth-child(3){
+                    width: 13%;
+                }       
+                &:nth-child(4),&:nth-child(5),&:nth-child(6){
+                    width: calc(32% / 3);
+                }
+                &:nth-child(7){
+                    width: 15%;
+                    padding-right: 2%;
+                }
+            }
+        }
+    }
+    tbody{
+        > tr{
+            &:nth-child(even){
+                background-color: $greyLv3;
+            }
+            > td{
+                vertical-align: top;
+                padding: 12px;
+                @include font(16px,$text);
+                &:nth-child(1){
+                    @include flex(row);
+                    align-items: center;
+                    div{
+                        @include outward(70px,70px);
+                        margin: 0 12px;
+                    }
+                    span{
+                        background-color: $white;
+                        border: 1px $white solid;
+                    }
+                }
+                &:nth-child(2), &:nth-child(3){
+                    line-height: 74px;
+                }
+                &:nth-child(4){
+                    padding-top: 30px;
+                    .item{
+                        @include flex(row);
+                        width: 100%;
+                        align-items: flex-start;
+                        padding: 12px 0 ;
+                        > div{
+                            width: calc(100% / 3);
+                            &:last-child{
+                                text-align: right;
+                                padding-right: 52px;
+                            }
+                        }
+                        .lastSpan{
+                            display: block;
+                            padding-top: 10px;
+                        }
+                        &:nth-child(n+2){
+                            border-top: 1px solid $white;
+                        }
+                    }
+                }
+                &:nth-child(5){
+                    vertical-align: bottom !important;
+                    padding: 25px;
+                    .select{
+                        width: 125px;
+                        line-height: 34px;
+                        padding-bottom: 6px;
+                        text-align: center;
+                        position: relative;
+                        cursor: pointer;
+                        &:hover{
+                            .list{
+                                display: block;
+                            }
+                        }
+                        > p{
+                            border-radius: 4px;
+                            i {
+                                padding-left: 5px;
+                            }
+                        }
+                        .list{
+                            position: absolute;
+                            top: 100%;
+                            width: 100%;
+                            box-shadow: 1px 2px 10px 0 $greyLv1;
+                            border-radius: 4px;
+                            background-color: $white;
+                            display: none;
+                            cursor: pointer;
+                            *{
+                                &.active, &:hover{
+                                    @include color($white,$black);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+  
+
+
+
+}
+
+//增加產品欄位
+.addProduct{
+    position: fixed;
+    overflow: scroll;
+    left: 0;
+    top: 0;
+    z-index: 4;
+    @include outward(100%,100%);
+    @include color($black,rgba($black,0.4));
+    display: none;
+    > .index{
+        margin-top: 95px;
+        background-color: white;
+        .title{
+            line-height: 64px;
+            height: 64px;
+            padding: 0 35px;
+            @include color($white,$black);
+            @include flex(row);
+            justify-content: space-between;
+            align-items: center;
+            p{
+                @include font(24px,$subTitle);
+            }
+            i{  
+                cursor: pointer;
+                font-size: 24px;
+                &:hover{
+                    color: $greyLv3;
+                }
+            }
+        }
+        > .content{
+            @include flex(row);
+            justify-content: center;
+            padding: 20px;
+            > div{
+                width: 50%;
+                &:first-child{
+                    margin-right: 15px;
+                    .upLoadArea{
+                        @include outward(100%,115px);
+                        @include color($greyLv1,$greyLv4);
+                        @include flex(column);
+                        justify-content: center;
+                        text-align: center;
+                        @include font(16px,$text);
+                        > i {
+                            font-size: 35px;
+                            margin-bottom: 6px;
+                        }
+                    }
+                    .picUpLoad{
+                        margin-top: 1%;
+                        > div{
+                            float: left;
+                            margin: calc( ( 4% / 3 ) / 2 ) 0;
+                            @include outward(32%, 126px);
+                            overflow: hidden;
+                            background-position: center center;
+                            background-size: cover;
+                            background-repeat: no-repeat;
+                            &:nth-child(3n+2){
+                                margin: calc( ( 4% / 3 ) / 2 ) 2%;
+                            }
+                        }
+                    }
+                }
+                &:last-child{
+                    margin-left: 15px;
+                    @include flex(column);
+                    //共用字型
+                    *{
+                        @include font(16px,$text);
+                    }
+                    h4, button{
+                        @include font(16px,$subTitle !important);
+                    }
+                    //共用border
+                    .productName, textarea{
+                        border: 1px $greyLv2 solid;
+                        border-radius: 4px;        
+                        outline:none;                
+                    }
+                    h4{
+                        line-height: 25px;
+                    }
+                    .productName{
+                        margin: 8px 0;
+                        padding: 0 16px;
+                        height: 35px;
+                    }
+                    textarea{
+                        height: 130px;
+                        padding: 8px 16px 17px;
+                        margin-bottom: 20px;
+                    }
+                    .h4Margin{
+                        margin-top: 12px;
+                    }
+                    //公用input內容欄
+                    .rowInput{
+                        @include flex(row);
+                        @include outward(100%,35px);
+                        margin: 4px 0;
+                        p, input,select{
+                            border: 1px $greyLv2 solid;
+                        }
+                        p{
+                            padding: 0 10px;
+                            line-height: 35px;
+                            @include color($greyLv1,$greyLv3);
+                            text-align: center;
+                            border-right: unset !important;
+                            border-top-left-radius:4px;
+                            border-bottom-left-radius: 4px;
+                        }
+                        input,select{
+                            border-top-right-radius:4px;
+                            border-bottom-right-radius: 4px;  
+                            margin-right: 10px;
+                            padding: 0 10px;
+                        }
+                    }
+                    //price列
+                    .price{
+                        input{
+                            width: 23%;
+                        }
+                    }
+                    //spec列
+                    .spec{  
+                        input{
+                            width: 30%;
+                        }
+                    }
+                    .addSpec{
+                        margin-top: 4px;
+                        padding: 8px 0 ;
+                        border-radius: 4px;
+                        @include color($white,$black);
+                        cursor: pointer;
+                        &:hover{
+                            @include color($white,$greyLv1);
+                        }
+                        i{
+                            font-family: "Font Awesome 5 Free";
+                            padding-left: 5px;
+                        }
+                    }
+                    .draftDone{
+                        button{
+                            float: right;
+                            cursor: pointer;
+                            padding: 8px 16px;
+                            margin-top: 20px;
+                            margin-left: 10px;
+                            border-radius: 3px;
+                            &:first-child{
+                                @include color($white, $black);
+                                &:hover{
+                                    @include color($white,$greyLv1);
+                                }
+                            }
+                            &:last-child{
+                                @include color($black, transparent);
+                                &:hover{
+                                    color: $greyLv1;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+            
+        }
+
+    }
+}

@@ -1,0 +1,64 @@
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin outward($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin color($frontColor,$backColor) {
+    color: $frontColor;
+    background-color: $backColor;
+}
+
+@mixin font($frontSize,$fontFamily) {
+    font-size: $frontSize;
+    font-family: $fontFamily;
+}
+
+
+//字型設定
+@font-face{
+    font-family: 'title';
+    src: url('../font/Oswald-SemiBold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'subTitle';
+    src: url('../font/Oswald-Regular.ttf') format('truetype');
+}
+
+
+@font-face{
+    font-family: 'text';
+    src: url('../font/Oswald-Light.ttf') format('truetype');
+}
+
+
+//文字設定
+$title:'title';
+$subTitle:'subTitle';
+$text:'text';
+
+//顏色設定
+$mainRed:#D0021B;
+$mainYellow:#F5A623;
+$mainBlue:  #4A90E2;
+$mainGreen: #7ED321;
+
+//灰階色設定(六階)grayScale
+$black: #000000;
+$greyLv1: #757575;
+$greyLv2: #C8C8C8;
+$greyLv3: #E1E1E1;
+$greyLv4: #F2F2F2;
+$white: #ffffff;
+
+//最大寬度
+
+$maxWidth:1142px;
+
+
+

@@ -1,0 +1,224 @@
+@import '../scss/allMix.scss';
+
+#wrapper{
+    font-family: 'title';
+    display: grid;
+    width: 960px;
+    margin: 32px auto;
+    grid-template-rows: repeat(20, $gridRow);
+    grid-template-columns: repeat(8,$gridColumn);
+    > div{
+        position: relative;
+        > *{
+            position: absolute;
+        }
+        &:first-child{
+            grid-column: 3 / 7;
+            grid-row: 1 / 2;
+            *{
+                margin: 0px auto;
+                text-align: center;
+            }
+            > *{
+                position: unset !important;  //位置設定為未設定
+            }
+            > h4{
+                @include color($white,$black);
+                @include font(16px,'text' !important);
+                @include outward(131px, 27px);
+                line-height: 27px;
+                margin: 0 auto;
+            }
+            > h1{
+                font-size: 72px;
+                line-height: 97px;
+            }
+        }
+        &:nth-child(2){
+            grid-column: 1 / 5;
+            grid-row: 3 / 7;
+            > .mainTitle{
+                top: -14px;
+            }
+            > .decoFrame{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                //定位，往上及往右各0.5
+                top: - ($gridRow * 0.5);
+                right: - ($gridColumn * 0.5);
+            }
+            > .serial{
+                bottom: -48px;
+            }
+            > .slashBlock{
+                left: $gridColumn / 2;
+                bottom: - ($gridRow / 2);
+            }
+            > .subTitle{
+                //position: absolute;
+                right: -78px;
+                bottom: 24px;
+                z-index: 100;
+                transform: rotate(90deg);
+            }
+
+        }
+        &:nth-child(3){
+            grid-column: 6 / 8;
+            grid-row: 4 / 6;
+            > .mainTitle{
+                bottom: - ($gridRow - 24px);
+                left: $gridColumn;
+            }
+            > .subTitle{
+                top: -24px;
+                left: -16px;
+            }
+            > .decoSolid{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                top: - ($gridRow / 2);
+                left: $gridColumn / 2;
+            }
+            > .decoFrame{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                top: - ($gridRow);
+                left: $gridColumn;   
+            }
+            > .serial{
+                top: - $gridRow;
+                right: - $gridColumn;
+            }
+        }
+        &:nth-child(4){
+            grid-column: 1 / 5;
+            grid-row: 9 / 11;      
+            > .mainTitle{
+                right: 0;
+                top: -48px;
+            }  
+            > .subTitle{
+                bottom: -24px;
+                left: 33px;
+            }
+            > .decoSolid{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                top: - ( $gridColumn / 2 );
+            }
+            > .decoFrame{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                bottom: - ( $gridRow / 2 );
+                right: - ( $gridColumn / 2 );
+            }
+            > .serial{
+                bottom: - ( $gridRow / 2 );
+                right: - ( $gridColumn / 2 );
+            }
+        }
+        &:nth-child(5){
+            grid-column: 7 / 9;
+            grid-row: 9 / 13; 
+            > .mainTitle{
+                transform: rotate(270deg);
+                top: 48px;
+                left: -96px;
+            }
+            > .subTitle{
+                transform: rotate(90deg);
+                top: - ($gridRow - 10px);
+                left: $gridColumn - 10px;
+                white-space:nowrap;
+            }   
+            > .decoFrame{
+                @include outward($gridColumn * 2 , $gridRow * 2);
+                top: - $gridRow;
+                left: - ( $gridColumn / 2 );
+            }
+            > .serial{
+                bottom: 0;
+                left: -60px;
+            }
+            > .slashBlock{
+                z-index: 2;
+                bottom: - ( $gridRow / 2 );
+            }
+
+        }
+        &:nth-child(6){
+            grid-column: 3 / 5;
+            grid-row: 13 / 15; 
+            > .mainTitle{
+                left: - ($gridColumn * 2);
+                top: $gridRow - 48px;
+                z-index: 3 !important;
+            }
+            > .subTitle{
+                right: - ( $gridColumn + 18px);
+            }
+            > .decoFrame{
+                @include outward($gridColumn * 2, $gridRow);
+                bottom: - ($gridRow / 2);
+                left: - ($gridColumn);
+            }
+            > .serial{
+                bottom: 0;
+                left: - ($gridColumn);
+            }
+            > .slashBlock{
+                top: - ($gridRow / 2);
+                left: -($gridColumn * 3 / 2);
+            }
+        }
+        &:nth-child(7){
+            grid-column: 5 / 9;
+            grid-row: 15 / 19;   
+            > .mainTitle{
+                top: -48px;
+                right: 0;
+            }
+            > .subTitle{
+                bottom: -28px; 
+                left: 175px;
+            }
+            > .decoSolid{
+                @include outward($gridColumn * 2, $gridRow * 2);
+                bottom: 0;
+                left: -( $gridColumn / 2 );
+            }
+            > .decoFrame{
+                @include outward(100%, $gridRow);
+                bottom: - ($gridRow / 2);
+            }
+            > .serial{
+                left: -58px;
+                top: $gridRow + 48px;
+            }
+
+        }
+        &:nth-child(8){
+            grid-column: 1 / 3;
+            grid-row: 17 / 21;
+            > .mainTitle{
+                transform: rotate(90deg);
+                top: 70px;
+                right: - $gridColumn;
+            }   
+            > .subTitle{
+                top: -24px;
+            }
+            > .decoSolid{
+                @include outward($gridColumn * 2 , $gridRow * 2);
+                right: - ($gridColumn);
+                bottom: 0;
+            }
+            > .decoFrame{
+                @include outward($gridColumn * 2, 100%);
+                top: - ($gridRow / 2);
+                right: - ($gridColumn / 2);
+            }
+            > .serial{
+                right: - ($gridColumn);
+                bottom: 0;
+            }
+        }
+    }
+}
+

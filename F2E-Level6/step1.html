@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="css/componenet.css">
+        <title>F2E-Level6</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="deco"></div>
+            <div class="progressBar">
+                <div class="active"></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <header>
+                <h1>
+                    Create Account
+                </h1>
+                <h2>
+                    Glad to see you here!
+                </h2>
+            </header>
+            <form action="/step1.html">
+                <div class="inputContent">
+                    <label>Account</label>
+                    <input name="Email" type="email" placeholder="example@email.com" data-toggle="tooltip" data-placement="right"
+                    @input="getCheckName($event)" title="INVALID EMAIL">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="inputContent">
+                    <label>Password</label>
+                    <input type="password" name="Password" placeholder="●●●●●●●●●●●" data-toggle="tooltip" data-placement="right"
+                    @input="getCheckName($event)" title="MINIMUM 8 CHARACTERS">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <div class="inputContent">
+                    <label>Comfirm Password</label>
+                    <input type="password" name="ConfirmPassword" placeholder="●●●●●●●●●●●" data-toggle="tooltip" data-placement="right"
+                    @input="getCheckName($event)" title="Not Match">
+                    <i class="fas fa-exclamation-triangle"></i>
+                </div>
+                <button @submit="" class="disable" disabled>
+                    SUBMIT & NEXT
+                </button>
+            </form>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/all.js"></script>
+    </body>
+</html>

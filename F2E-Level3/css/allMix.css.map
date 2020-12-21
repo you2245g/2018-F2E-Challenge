@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "AAsBA,UAAU;EACN,WAAW,EAAE,OAAO;EACpB,GAAG,EAAE,kCAAkC,CAAC,kBAAkB;;;AAG9D,UAAU;EACN,WAAW,EAAE,UAAU;EACvB,GAAG,EAAE,iCAAiC,CAAC,kBAAkB;;;AAI7D,UAAU;EACN,WAAW,EAAE,MAAM;EACnB,GAAG,EAAE,+BAA+B,CAAC,kBAAkB",
+    "sources": [
+        "allMix.scss"
+    ],
+    "names": [],
+    "file": "allMix.css"
+}

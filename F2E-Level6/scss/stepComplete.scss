@@ -1,0 +1,25 @@
+@import '../scss/allMix.scss';
+
+
+
+#wrapper{
+
+
+    > main{
+        *{
+            text-align: center;
+        }
+        > p{
+            i{
+                font-size: 300px;
+                color: $secondary;
+            }
+        }
+        h3{
+            margin-top: 40px;
+            color: $primary;
+            @include font(20px,'title');
+        }
+    }
+
+}

@@ -1,0 +1,179 @@
+@import '../scss/allMix.scss';
+
+
+//外層響應式
+@media (min-width: 501px) {
+
+    #wrapper{
+        width: 460px;
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    #wrapper{
+        width: calc(100% - 40px);
+        margin: 0 20px;
+    }
+
+}
+
+//#wrapper內元件
+#wrapper{
+
+    > .deco{
+        @include outward(100%,3px);
+        background-color: $primary;
+    }
+
+    > .progressBar{
+        @include flex(row);
+        justify-content: space-between;
+        margin: 57px auto 41px;
+        width: 234px;
+        > div{
+            @include outward(16px,16px);
+            border-radius: 50%;
+            border: 1px $secondary solid;
+            position: relative;
+            &:before{
+                content: '';
+                @include outward(10px,10px);
+                background-color: $secondary;
+                position: absolute;
+                border-radius: 50%;
+                top: 2px;
+                left: 2px;
+            }
+            &:nth-child(-n+3){
+                &:after{
+                    content: '';
+                    @include outward(57px,2px);
+                    background-color: $secondary;
+                    position: absolute;
+                    top: 6px;
+                    left: 15px;
+                }
+            }
+        }
+    }
+
+    > header{
+        font-family: 'title';
+        text-align: center;
+        margin-bottom: 24px;
+        h1{
+            font-size: 44px;
+        }
+        h2{
+            font-size: 24px;
+            margin-top: -8px;
+        }
+    }
+    > form{
+        .inputContent{
+            position: relative;
+        }
+        label{
+            @include font(20px,'text');
+        }
+        input{
+            @include font(16px,'text');
+            @include outward(100%,52px);
+            border: 1px solid black;
+            border-radius: 5px;
+            margin: 8px 0 24px;
+            padding-left: 20px;
+        }
+        .fa-exclamation-triangle{
+            color: $notice;
+            position: absolute;
+            padding: 10px; 
+            right: 0;
+            top: 43px;
+            display: none;
+        }
+        select{
+            @include outward(100%, 52px);
+            background-color: transparent !important;
+            border: 1px solid black;
+            border-radius: 5px;
+            margin-top: 8px;
+            padding: 0px 20px;
+            font-size: 16px;
+            margin-bottom: 24px;
+        }
+        select:required:invalid {
+            color: $disable;
+        }
+        button{
+            @include outward(100%, 52px);
+            @include color(white,$primary);
+            margin: 16px 0 40px;
+            cursor: pointer;
+            outline: none;
+        }
+    }
+}
+
+
+//警示框(for Input欄)
+.warn{
+    border: 1px solid $notice !important;
+    &~.fa-exclamation-triangle{
+        display: block !important;
+    }
+}
+//按鈕停用(for按鈕)
+.disable{
+    background-color: $secondary !important;
+}
+
+
+
+//tooltip客製
+
+.tooltip{
+    .tooltip-arrow{
+        border-right-color:$notice !important;
+        border-left-color:$notice !important;
+    }
+    .tooltip-inner{
+        background-color: $notice;
+        white-space: nowrap;
+        font-size: 13px;
+    }
+}
+
+
+
+//進度條狀態列
+
+//打勾勾
+.nowCheck{
+    background-color: $primary;
+    border-color: $primary !important;
+    &:before{
+        content: '\f00c' !important;
+        font-family: "Font Awesome 5 Free" !important; 
+        font-weight: 900 !important; 
+        @include color(white,$primary !important);
+        position: absolute;
+        font-size: 12px;
+        top: 2px !important;
+        left: 1px !important;
+    }
+    &:after{
+        background-color: $primary !important;
+    }
+}
+
+//現在執行
+.active{
+    border-color: $primary !important;
+    &:before{
+        background-color: $primary !important;
+    }
+}

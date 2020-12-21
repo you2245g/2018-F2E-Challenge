@@ -1,0 +1,81 @@
+@import '../scss/allMix.scss';
+
+//共通元件
+
+//內元件絕對位置設定
+//展示背景圖
+.backImage{
+    background-position: center center;
+    background-size: cover;
+    @include outward(100%, 100%);
+    cursor: pointer;
+    &:before{
+        content: '';
+        @include outward(100%, 100%);
+        position: absolute;
+        background-color: rgba( $mainColor, 0.5);
+        display: none;
+    }
+    &:hover{
+        &:before{
+            display: block;
+        }
+    }
+}
+
+//展示主標題
+.mainTitle{
+    font-size: 48px;
+    &:before,&:after{
+        content: attr(data-title);
+        position: absolute;
+        left: 0;   
+        overflow: hidden;
+        height: 20px;
+    } 
+    &:before{
+        top: -13px;
+        color: rgba(0,0,0,0.3);
+    }
+    &:after{
+        top: -18px;
+        color: rgba(0,0,0,0.1);
+    }
+}
+
+//副標題
+.subTitle{
+    font-size: 24px;
+}
+
+//裝飾框
+.decoSolid{
+    background-color: $mainColor;
+    z-index: -1;
+}
+
+//裝飾框線
+.decoFrame{
+    border: $mainColor 20px solid;
+    z-index: -2;
+}
+
+//序列號
+.serial{
+    font-size: 48px;
+}
+
+//斜線框
+.slashBlock{
+    @include outward($gridColumn * 2 , $gridRow);
+    background-image: url('../img/patternUnit.png');
+    background-repeat: repeat;
+    background-size: contain;
+}
+
+
+
+//第二頁需求元件
+.decoTitle{
+    font-size: 48px;
+}

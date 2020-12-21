@@ -1,0 +1,361 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/RacingSansOne-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'subTitle';
+  src: url("../font/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'italic';
+  src: url("../font/Roboto-Italic.ttf") format("truetype");
+}
+
+body {
+  color: black;
+  background-color: #F2F2F2;
+}
+
+header > h1 {
+  font-family: 'title';
+  letter-spacing: 1px;
+  font-size: 30px;
+}
+
+header > h1:hover {
+  cursor: pointer;
+  color: #F2F2F2;
+}
+
+header > .box .icon {
+  padding-right: 2%;
+}
+
+header > .box .icon:hover {
+  cursor: pointer;
+  color: #F2F2F2;
+}
+
+header > .box input {
+  color: white;
+  background-color: transparent;
+  padding-right: 1%;
+  width: 91%;
+  outline: none;
+}
+
+header > .box input::-webkit-input-placeholder {
+  color: white;
+}
+
+header > .box input:-ms-input-placeholder {
+  color: white;
+}
+
+header > .box input::-ms-input-placeholder {
+  color: white;
+}
+
+header > .box input::placeholder {
+  color: white;
+}
+
+header > .box > div {
+  width: 100%;
+  height: 1px;
+  background-color: white;
+  margin-top: 5px;
+}
+
+aside {
+  float: left;
+  color: black;
+  background-color: #EBEBEB;
+  width: 30%;
+}
+
+aside > div {
+  border-bottom: 1px solid #D7D7D7;
+}
+
+aside > div h2 {
+  font-size: 20px;
+  font-family: "subTitle";
+  padding-bottom: 20px;
+}
+
+aside > div h2:hover {
+  color: #9B9B9B;
+  cursor: pointer;
+}
+
+aside > div span {
+  color: #9B9B9B;
+  font-size: 15px;
+  float: right;
+}
+
+aside > div select {
+  width: 100%;
+  height: 40px;
+}
+
+aside > div:nth-child(2) input, aside > div:nth-child(2) p {
+  margin-top: 10px;
+}
+
+aside > div:nth-child(2) p {
+  font-size: 16px;
+  font-family: "text";
+  width: 20%;
+  padding: 8px 15px 0 0;
+  float: left;
+  text-align: right;
+}
+
+aside > div:nth-child(2) input {
+  width: 80%;
+  height: 40px;
+  padding-left: 16px;
+}
+
+aside > div:nth-child(3) p {
+  font-size: 16px;
+}
+
+aside > div:nth-child(3) input {
+  width: 16px;
+  height: 16px;
+  margin-right: 10px;
+  float: left;
+}
+
+section {
+  float: left;
+}
+
+section .searchResponse {
+  font-family: "text";
+}
+
+section .searchResponse span {
+  font-family: "subTitle";
+  padding: 0 3px;
+  color: #9013FE;
+}
+
+section .selectBoard {
+  font-family: "italic";
+  color: #9013FE;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+section .selectBoard > div {
+  margin-top: 10px;
+  border: 1px solid #9013FE;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+section .selectBoard > div i {
+  padding-left: 5px;
+}
+
+section .selectBoard > div:nth-child(n+2) {
+  margin-left: 10px;
+}
+
+section .selectBoard > div:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #9013FE;
+}
+
+section .content .block {
+  background-color: white;
+  width: 100%;
+  margin-top: 20px;
+}
+
+section .content .block:hover {
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 9px grey;
+          box-shadow: 0px 0px 9px grey;
+}
+
+section .content .block > div:nth-child(1) {
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+section .content .block > div:nth-child(2) h3 {
+  padding-top: 25px;
+  color: #9013FE;
+  font-size: 24px;
+  font-family: "subTitle";
+}
+
+section .pagination > div {
+  float: left;
+  margin: 30px 0px;
+  width: 40px;
+  height: 40px;
+  font-size: 16px;
+  font-family: "text";
+  color: #9013FE;
+  background-color: white;
+  border: 1px #D7D7D7 solid;
+  text-align: center;
+  line-height: 40px;
+}
+
+section .pagination > div:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #9013FE;
+}
+
+section .pagination .active {
+  color: white;
+  background-color: #9013FE;
+}
+
+.detail {
+  float: left;
+  padding: 0 40px;
+}
+
+.detail .breadCrumbs {
+  height: 50px;
+  font-size: 16px;
+  font-family: "text";
+  color: grey;
+  background-color: #EBEBEB;
+  margin: 24px 0;
+  padding-left: 20px;
+  line-height: 50px;
+}
+
+.detail .breadCrumbs span:first-child {
+  color: #9013FE;
+  padding-right: 5px;
+}
+
+.detail .breadCrumbs span:first-child:hover {
+  cursor: pointer;
+  color: grey;
+}
+
+.detail .breadCrumbs span:last-child {
+  padding-left: 5px;
+}
+
+.detail .detailContent {
+  color: black;
+  background-color: white;
+}
+
+.detail .detailContent .imgBack {
+  height: 350px;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.detail .detailContent .detailArticle > h3 {
+  padding: 30px 0 27px;
+  color: #9013FE;
+}
+
+.detail .detailContent .detailArticle .info > span:nth-child(n+2) {
+  display: block;
+  line-height: 15px;
+}
+
+.detail .detailContent .detailArticle .Description {
+  padding-bottom: 30px;
+}
+
+.detail .backKey {
+  margin-bottom: 30px;
+  float: right;
+  text-align: center;
+  line-height: 30px;
+  color: grey;
+  background-color: #EBEBEB;
+  font-size: 16px;
+  font-family: "text";
+  width: 100px;
+  height: 30px;
+}
+
+.detail .backKey:hover {
+  color: white;
+  background-color: #9013FE;
+  -webkit-transition: .2s;
+  transition: .2s;
+}
+
+.tagName {
+  margin-bottom: 20px;
+}
+
+.tagName > span {
+  font-size: 16px;
+  font-family: "italic";
+  color: white;
+  background-color: #D7D7D7;
+  padding: 5px 20px;
+  border-radius: 20px;
+}
+
+.tagName > span:hover {
+  cursor: pointer;
+  background-color: #9013FE;
+}
+
+.info {
+  font-size: 16px;
+  font-family: "text";
+  color: #9B9B9B;
+}
+
+.info span {
+  line-height: 1.4em;
+}
+
+.info span a {
+  color: #9B9B9B;
+}
+
+.info span a:hover {
+  cursor: pointer;
+  color: #9013FE;
+}
+
+.Description {
+  word-break: normal;
+  text-indent: 2em;
+  line-height: 1.5em;
+  margin: 16px 0 20px;
+  font-size: 16px;
+  font-family: "text";
+}
+/*# sourceMappingURL=all.css.map */

@@ -1,0 +1,277 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Oswald-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'subTitle';
+  src: url("../font/Oswald-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Oswald-Light.ttf") format("truetype");
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0 15px;
+  position: relative;
+  font-size: 16px;
+}
+
+.info label {
+  width: 43px;
+  height: 16px;
+  position: relative;
+}
+
+.info label > i {
+  padding-left: 5px;
+}
+
+.info label > .clickList {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  width: 150px;
+  border-radius: 4px;
+  margin-top: 6px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  -webkit-box-shadow: 1px 2px 10px 0 #757575;
+          box-shadow: 1px 2px 10px 0 #757575;
+}
+
+.info label > .clickList > p:hover, .info label > .clickList > p.active {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.info button {
+  color: #000000;
+  background-color: transparent;
+  width: 192px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  outline: none;
+  cursor: pointer;
+}
+
+.info button i {
+  font-size: 12px !important;
+  padding: 4px 0 0 10px;
+}
+
+.info button:hover {
+  color: #757575;
+}
+
+.info button:hover .hoverList {
+  display: block;
+}
+
+.info button .hoverList {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: 100%;
+  z-index: 2;
+  color: #000000;
+  background-color: #ffffff;
+  width: 170px;
+  -webkit-box-shadow: 1px 2px 10px 0 #757575;
+          box-shadow: 1px 2px 10px 0 #757575;
+  padding: 5px 0;
+}
+
+.info button .hoverList > p {
+  text-align: left;
+  padding: 10px 0;
+}
+
+.info button .hoverList > p > label {
+  padding: 0 10px;
+}
+
+table {
+  width: 100%;
+}
+
+table thead {
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-family: "subTitle";
+}
+
+table thead > tr {
+  height: 40px;
+}
+
+table thead > tr > th {
+  text-align: center;
+  text-align: left;
+}
+
+table thead > tr > th:nth-child(1) {
+  padding-left: calc(1.5% + 32px);
+  width: 19%;
+}
+
+table thead > tr > th:nth-child(2) {
+  width: 18%;
+}
+
+table thead > tr > th:nth-child(3) {
+  width: 7%;
+  padding-right: 3%;
+  text-align: right;
+}
+
+table thead > tr > th:nth-child(4), table thead > tr > th:nth-child(5) {
+  width: calc(20% / 2);
+}
+
+table thead > tr > th:nth-child(6) {
+  width: 16%;
+}
+
+table thead > tr > th:nth-child(7) {
+  width: 11%;
+  padding-right: 4%;
+}
+
+table tbody {
+  font-size: 15px;
+  font-family: "text";
+  line-height: 24px;
+}
+
+table tbody > tr {
+  vertical-align: top;
+}
+
+table tbody > tr:nth-child(2n) {
+  background-color: #E1E1E1;
+}
+
+table tbody > tr td {
+  padding: 12px;
+  padding-left: 0px;
+}
+
+table tbody > tr td:nth-child(1) {
+  line-height: 20px !important;
+  padding-left: 1.5%;
+}
+
+table tbody > tr td:nth-child(1) > label {
+  padding-right: 10px;
+}
+
+table tbody > tr td:nth-child(1) > label > span {
+  line-height: 10px !important;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
+}
+
+table tbody > tr td:nth-child(2) {
+  padding-top: unset;
+}
+
+table tbody > tr td:nth-child(2) > .item {
+  width: 85%;
+  padding: 10px 0;
+}
+
+table tbody > tr td:nth-child(2) > .item:nth-child(n+2) {
+  border-top: 1px solid #ffffff;
+}
+
+table tbody > tr td:nth-child(2) > .item > div {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+table tbody > tr td:nth-child(2) > .item > div > span:first-child {
+  color: #757575;
+}
+
+table tbody > tr td:nth-child(3) {
+  text-align: right;
+  padding-right: 33px;
+}
+
+table tbody > tr td:last-child .select {
+  width: 120px;
+  line-height: 34px;
+  padding-bottom: 6px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+table tbody > tr td:last-child .select:hover .list {
+  display: block;
+}
+
+table tbody > tr td:last-child .select > p {
+  border-radius: 4px;
+}
+
+table tbody > tr td:last-child .select > p i {
+  padding-left: 5px;
+}
+
+table tbody > tr td:last-child .select .list {
+  position: absolute;
+  z-index: 4;
+  top: 100%;
+  width: 100%;
+  -webkit-box-shadow: 1px 2px 10px 0 #757575;
+          box-shadow: 1px 2px 10px 0 #757575;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: none;
+  cursor: pointer;
+}
+
+table tbody > tr td:last-child .select .list *.active, table tbody > tr td:last-child .select .list *:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+/*# sourceMappingURL=orders.css.map */

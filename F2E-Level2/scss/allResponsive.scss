@@ -1,0 +1,284 @@
+@import '../scss/allMix.scss';
+
+//header responsive & .detail inner
+@media (max-width: 767px) {
+
+    header{
+        > h1{
+            @include outward(100%,69px);
+            @include color(white, $headerBackgroundColor);
+            @include flex(row);
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        > .box{
+            @include outward(100%,55px);
+            padding: 30px 10% 50px;
+            background-color: #ebebeb;
+            .icon{
+                &:hover{
+                    color: $headerBackgroundColor;
+                }
+            }
+            > input{
+                color: black;
+                &::placeholder{
+                    color: grey;
+                }
+            }
+            > div{
+                background-color: black;
+            }
+        }
+    }
+
+    //.detail inner
+    .detail{
+        .detailArticle{
+            padding: 0 40px;
+            > h3{
+                @include font(24px,$title);
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    
+    //header
+    header{
+        @include color(white, $headerBackgroundColor);
+        @include outward(100%, 90px);
+        @include flex(row);
+        align-items: center;
+        //標題
+        > h1{
+            padding-left: 5%;
+        }
+        //搜尋列
+        > .box{
+            padding-left: 15%;
+            width: 550px;
+        }
+    }   
+    
+    //.detail inner
+    .detail{
+        .detailArticle{
+            padding: 0 60px;
+            > h3{
+                @include font(36px,$title);
+            }
+        }
+    }
+
+}
+
+
+//aside responsive
+@media (max-width: 767px) {
+
+    aside{
+        width: 100% !important;
+        > div{
+            background-color: #D7D7D7 ;
+            border-bottom: 1px solid #9B9B9B ;
+            padding: 20px 10%;
+            h2{
+                padding-bottom: 1px;
+            }
+            > div{
+                display: none;
+            }
+        } 
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+    
+    aside{
+        > div{
+            padding: 20px 10%;
+        }
+        span{
+            display: none;
+        }
+    }
+
+}
+
+@media (min-width: 1200px){
+
+    aside{
+        > div{
+            padding: 20px 10%;
+        }
+        margin-left: 3%;
+        span{
+            display: none;
+        }
+    }
+
+}
+
+
+//section & .detail responsive
+
+@media (max-width: 767px) {
+
+    section{
+        width: 100%;
+        @include flex(column);
+        padding: 15px 10% 0;
+        .searchResponse{
+            font-size: 18px;
+        }
+    }
+
+    .selectBoard{
+        font-size: 12px;
+        > div{
+            padding: 7px;
+            border-radius: 10px;
+        }
+    }
+
+    //.block段為複製
+    .block{
+        > div{
+            &:nth-child(1){
+                @include outward(100%,196px);
+            }
+            &:nth-child(2){
+                padding: 0 20px;
+                .info{
+                    padding-bottom: 20px;
+                    > span{
+                        display: block;
+                        margin-top: 10px;
+                        &:last-child{
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        align-self: center;
+    }
+
+
+    .detail{
+        width: 100%;
+    }
+
+
+}
+
+
+@media screen and (min-width: 768px) and (max-width: 1199px){
+   
+    section{
+        width: 70%;
+        padding: 20px 4% 0;
+        .searchResponse{
+            font-size: 24px;
+        }
+    }
+
+    .selectBoard{
+        font-size: 16px;
+        > div{
+            padding: 10px;
+            border-radius: 16px;
+        }
+    }
+
+    .block{
+        > div{
+            &:nth-child(1){
+                @include outward(100%,196px);
+            }
+            &:nth-child(2){
+                padding: 0 20px;
+                .info{
+                    padding-bottom: 20px;
+                    > span{
+                        display: block;
+                        margin-top: 10px;
+                        &:last-child{
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        float: right;
+    }
+
+    .detail{
+        width: 70%;
+    }
+
+}
+
+
+@media (min-width: 1200px){
+
+    
+    section{
+        width: 67%;
+        padding: 20px 4% 0;
+        .searchResponse{
+            font-size: 24px;
+        }
+    }
+    
+    .selectBoard{
+        font-size: 16px;
+        > div{
+            padding: 10px;
+            border-radius: 16px;
+        }
+    }
+
+    .block{
+        margin-top: 20px;
+        @include flex(row);
+        > div{    
+            &:nth-child(1){
+                width: 40%;
+            }
+            &:nth-child(2){
+                width: 60%;
+                padding-left: 20px;
+                .Description{
+                    padding-right: 20px;
+                }
+                .info{
+                    margin: 20px 0 ;
+                    span{
+                        &:nth-child(n+2){
+                            margin-left: 15px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .pagination{
+        float: right;
+    }
+
+    .detail{
+        width: 67%;
+    }
+
+}
+

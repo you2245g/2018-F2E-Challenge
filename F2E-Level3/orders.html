@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="css/frame.css">
+        <link rel="stylesheet" href="css/orders.css">
+        <title>F2E-Level3</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <nav>
+                    <h1>
+                        <a style="color: white;" href="index.html">
+                            Shoptime
+                        </a>
+                    </h1>
+                    <div @click="toggle()" class="navBar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                            HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a class="active" href="orders.html">
+                            ORDERS
+                            </a>
+                        </li>
+                        <li>
+                            <a href="product.html">
+                            PRODUCT
+                            </a>
+                        </li>
+                    </ul>
+                    <h2>ADMIN</h2>
+                </nav>
+            </header>
+            <div class="index">
+                <div class="info">
+                    <label>
+                        <input type="checkbox">
+                        <span></span>
+                        <i @click.prevent="clickBlock()" class="fas fa-caret-down"></i>
+                        <div class="clickList" @click.prevent="clickChange($event)" >
+                            <p v-for="(val, key) in toggleData">{{ val }}</p>
+                        </div>
+                    </label>
+                    <button>
+                        EDIT SECTION
+                        <i class="fas fa-caret-down"></i>
+                        <div class="hoverList" >
+                            <template v-for="(val, key) in hoverData">
+                                <p>
+                                    <label>
+                                        <input type="checkbox">
+                                        <span></span>
+                                    </label>
+                                    {{val}}
+                                </p>
+                            </template>
+                        </div>
+                    </button>
+                </div>
+                <!--table資料內容-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Customer</th>
+                            <th>Product List</th>
+                            <th>Total</th>
+                            <th>Add to Cart</th>
+                            <th>Check-out</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody @click="statusChange($event)">
+                        <!--
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <span></span>
+                                </label>
+                                George Walker Bush
+                            </td>
+                            <td>
+                                <div class="item">
+                                    <p>Vestibulum.</p>
+                                    <div>
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <p>Vestibulum.</p>
+                                    <div>
+                                        <span>$1,400</span>
+                                        <span>1</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>$2,200</td>
+                            <td>
+                                2018/6/8<br>
+                                13:39
+                            </td>
+                            <td>
+                                2018/6/8<br>
+                                20:23
+                            </td>
+                            <td>
+                                386 Windler Drives<br>
+                                Apt. 358
+                            </td>
+                            <td>
+                                <div class="select">
+                                    <p class="Unpaid">
+                                        Unpaid
+                                        <i class="fas fa-caret-down"></i>
+                                    </p>
+                                    <div class="list">
+                                        <p data-num="0">Paid</p>
+                                        <p data-num="0" class="active">Unpaid</p>
+                                        <p data-num="0">Shipping</p>
+                                        <p data-num="0">Done</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        -->
+
+                    </tbody>
+                </table>
+                <!--分頁欄-->
+                <div class="pagination" @click="changePage($event)">
+                    <!--
+                    <div>1</div>
+                    -->
+                </div>
+            </div>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.0/axios.min.js'></script>
+        <script src="js/order.js"></script>
+    </body>
+</html>
+

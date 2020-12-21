@@ -1,0 +1,41 @@
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin outward($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin color($frontColor,$backColor) {
+    color: $frontColor;
+    background-color: $backColor;
+}
+
+@mixin font($frontSize,$fontFamily) {
+    font-size: $frontSize;
+    font-family: $fontFamily;
+}
+
+
+//字型設定(roboto font)
+@font-face{
+    font-family: 'title';
+    src: url('../font/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'text';
+    src: url('../font/Roboto-Regular.ttf') format('truetype');
+}
+
+//顏色設定
+$mainColor:#50E3C2;
+$mainGrey:rgba(0,0,0,0.3);
+$black:black;
+$white:white;
+
+//格子長寬設定
+$gridColumn:120px;
+$gridRow:100px;

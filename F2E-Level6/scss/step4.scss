@@ -1,0 +1,51 @@
+@import '../scss/allMix.scss';
+
+
+
+#wrapper{
+
+    > form{
+
+        > div{
+            //卡別容器
+            &:first-child{  
+                > i{
+                    &:last-child{
+                        font-size: 30px;
+                        position: absolute;
+                        right: 9px;
+                        top: 44px;
+                    }
+                }
+            }
+            &:nth-child(2){
+                @include flex(row);
+                justify-content: space-between;
+                > div{
+                    width: 48%;
+                }
+            }
+            &:nth-child(3){
+                @include flex(row);
+                justify-content: space-between;
+                > div{
+                    width: 30%;
+                    &:nth-child(2){
+                        > select{
+                            margin-top: unset;
+                        }
+                        > label{
+                            padding: 1px 0 6px;
+                        }
+                    }
+                    &:nth-child(3){
+                        > select{
+                            margin-top: 31px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

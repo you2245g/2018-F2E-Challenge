@@ -1,0 +1,506 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Oswald-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'subTitle';
+  src: url("../font/Oswald-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Oswald-Light.ttf") format("truetype");
+}
+
+.info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px 0 15px;
+}
+
+.info label {
+  width: 43px;
+  height: 16px;
+  position: relative;
+}
+
+.info label > i {
+  padding-left: 5px;
+}
+
+.info label > .clickList {
+  display: none;
+  position: absolute;
+  z-index: 3;
+  width: 150px;
+  border-radius: 4px;
+  margin-top: 6px;
+  background-color: white;
+  text-align: center;
+  line-height: 40px;
+  -webkit-box-shadow: 1px 2px 10px 0 #757575;
+          box-shadow: 1px 2px 10px 0 #757575;
+}
+
+.info label > .clickList > p:hover, .info label > .clickList > p.active {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.info button {
+  color: #ffffff;
+  background-color: #000000;
+  width: 192px;
+  height: 34px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.info button i {
+  font-size: 10px !important;
+  padding-left: 10px;
+}
+
+.info button:hover {
+  color: #ffffff;
+  background-color: #757575;
+}
+
+table {
+  width: 100%;
+}
+
+table thead {
+  color: #000000;
+  background-color: #ffffff;
+  font-size: 16px;
+  font-family: "subTitle";
+}
+
+table thead > tr {
+  height: 40px;
+}
+
+table thead > tr > th {
+  text-align: center;
+  text-align: left;
+}
+
+table thead > tr > th:nth-child(1) {
+  padding-left: 2%;
+  width: 27%;
+}
+
+table thead > tr > th:nth-child(2), table thead > tr > th:nth-child(3) {
+  width: 13%;
+}
+
+table thead > tr > th:nth-child(4), table thead > tr > th:nth-child(5), table thead > tr > th:nth-child(6) {
+  width: calc(32% / 3);
+}
+
+table thead > tr > th:nth-child(7) {
+  width: 15%;
+  padding-right: 2%;
+}
+
+table tbody > tr:nth-child(even) {
+  background-color: #E1E1E1;
+}
+
+table tbody > tr > td {
+  vertical-align: top;
+  padding: 12px;
+  font-size: 16px;
+  font-family: "text";
+}
+
+table tbody > tr > td:nth-child(1) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+table tbody > tr > td:nth-child(1) div {
+  width: 70px;
+  height: 70px;
+  margin: 0 12px;
+}
+
+table tbody > tr > td:nth-child(1) span {
+  background-color: #ffffff;
+  border: 1px #ffffff solid;
+}
+
+table tbody > tr > td:nth-child(2), table tbody > tr > td:nth-child(3) {
+  line-height: 74px;
+}
+
+table tbody > tr > td:nth-child(4) {
+  padding-top: 30px;
+}
+
+table tbody > tr > td:nth-child(4) .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  padding: 12px 0;
+}
+
+table tbody > tr > td:nth-child(4) .item > div {
+  width: calc(100% / 3);
+}
+
+table tbody > tr > td:nth-child(4) .item > div:last-child {
+  text-align: right;
+  padding-right: 52px;
+}
+
+table tbody > tr > td:nth-child(4) .item .lastSpan {
+  display: block;
+  padding-top: 10px;
+}
+
+table tbody > tr > td:nth-child(4) .item:nth-child(n+2) {
+  border-top: 1px solid #ffffff;
+}
+
+table tbody > tr > td:nth-child(5) {
+  vertical-align: bottom !important;
+  padding: 25px;
+}
+
+table tbody > tr > td:nth-child(5) .select {
+  width: 125px;
+  line-height: 34px;
+  padding-bottom: 6px;
+  text-align: center;
+  position: relative;
+  cursor: pointer;
+}
+
+table tbody > tr > td:nth-child(5) .select:hover .list {
+  display: block;
+}
+
+table tbody > tr > td:nth-child(5) .select > p {
+  border-radius: 4px;
+}
+
+table tbody > tr > td:nth-child(5) .select > p i {
+  padding-left: 5px;
+}
+
+table tbody > tr > td:nth-child(5) .select .list {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  -webkit-box-shadow: 1px 2px 10px 0 #757575;
+          box-shadow: 1px 2px 10px 0 #757575;
+  border-radius: 4px;
+  background-color: #ffffff;
+  display: none;
+  cursor: pointer;
+}
+
+table tbody > tr > td:nth-child(5) .select .list *.active, table tbody > tr > td:nth-child(5) .select .list *:hover {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.addProduct {
+  position: fixed;
+  overflow: scroll;
+  left: 0;
+  top: 0;
+  z-index: 4;
+  width: 100%;
+  height: 100%;
+  color: #000000;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: none;
+}
+
+.addProduct > .index {
+  margin-top: 95px;
+  background-color: white;
+}
+
+.addProduct > .index .title {
+  line-height: 64px;
+  height: 64px;
+  padding: 0 35px;
+  color: #ffffff;
+  background-color: #000000;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.addProduct > .index .title p {
+  font-size: 24px;
+  font-family: "subTitle";
+}
+
+.addProduct > .index .title i {
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.addProduct > .index .title i:hover {
+  color: #E1E1E1;
+}
+
+.addProduct > .index > .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 20px;
+}
+
+.addProduct > .index > .content > div {
+  width: 50%;
+}
+
+.addProduct > .index > .content > div:first-child {
+  margin-right: 15px;
+}
+
+.addProduct > .index > .content > div:first-child .upLoadArea {
+  width: 100%;
+  height: 115px;
+  color: #757575;
+  background-color: #F2F2F2;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-align: center;
+  font-size: 16px;
+  font-family: "text";
+}
+
+.addProduct > .index > .content > div:first-child .upLoadArea > i {
+  font-size: 35px;
+  margin-bottom: 6px;
+}
+
+.addProduct > .index > .content > div:first-child .picUpLoad {
+  margin-top: 1%;
+}
+
+.addProduct > .index > .content > div:first-child .picUpLoad > div {
+  float: left;
+  margin: calc( ( 4% / 3 ) / 2) 0;
+  width: 32%;
+  height: 126px;
+  overflow: hidden;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.addProduct > .index > .content > div:first-child .picUpLoad > div:nth-child(3n+2) {
+  margin: calc( ( 4% / 3 ) / 2) 2%;
+}
+
+.addProduct > .index > .content > div:last-child {
+  margin-left: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.addProduct > .index > .content > div:last-child * {
+  font-size: 16px;
+  font-family: "text";
+}
+
+.addProduct > .index > .content > div:last-child h4, .addProduct > .index > .content > div:last-child button {
+  font-size: 16px;
+  font-family: "subTitle" !important;
+}
+
+.addProduct > .index > .content > div:last-child .productName, .addProduct > .index > .content > div:last-child textarea {
+  border: 1px #C8C8C8 solid;
+  border-radius: 4px;
+  outline: none;
+}
+
+.addProduct > .index > .content > div:last-child h4 {
+  line-height: 25px;
+}
+
+.addProduct > .index > .content > div:last-child .productName {
+  margin: 8px 0;
+  padding: 0 16px;
+  height: 35px;
+}
+
+.addProduct > .index > .content > div:last-child textarea {
+  height: 130px;
+  padding: 8px 16px 17px;
+  margin-bottom: 20px;
+}
+
+.addProduct > .index > .content > div:last-child .h4Margin {
+  margin-top: 12px;
+}
+
+.addProduct > .index > .content > div:last-child .rowInput {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 100%;
+  height: 35px;
+  margin: 4px 0;
+}
+
+.addProduct > .index > .content > div:last-child .rowInput p, .addProduct > .index > .content > div:last-child .rowInput input, .addProduct > .index > .content > div:last-child .rowInput select {
+  border: 1px #C8C8C8 solid;
+}
+
+.addProduct > .index > .content > div:last-child .rowInput p {
+  padding: 0 10px;
+  line-height: 35px;
+  color: #757575;
+  background-color: #E1E1E1;
+  text-align: center;
+  border-right: unset !important;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+}
+
+.addProduct > .index > .content > div:last-child .rowInput input, .addProduct > .index > .content > div:last-child .rowInput select {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  margin-right: 10px;
+  padding: 0 10px;
+}
+
+.addProduct > .index > .content > div:last-child .price input {
+  width: 23%;
+}
+
+.addProduct > .index > .content > div:last-child .spec input {
+  width: 30%;
+}
+
+.addProduct > .index > .content > div:last-child .addSpec {
+  margin-top: 4px;
+  padding: 8px 0;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.addProduct > .index > .content > div:last-child .addSpec:hover {
+  color: #ffffff;
+  background-color: #757575;
+}
+
+.addProduct > .index > .content > div:last-child .addSpec i {
+  font-family: "Font Awesome 5 Free";
+  padding-left: 5px;
+}
+
+.addProduct > .index > .content > div:last-child .draftDone button {
+  float: right;
+  cursor: pointer;
+  padding: 8px 16px;
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 3px;
+}
+
+.addProduct > .index > .content > div:last-child .draftDone button:first-child {
+  color: #ffffff;
+  background-color: #000000;
+}
+
+.addProduct > .index > .content > div:last-child .draftDone button:first-child:hover {
+  color: #ffffff;
+  background-color: #757575;
+}
+
+.addProduct > .index > .content > div:last-child .draftDone button:last-child {
+  color: #000000;
+  background-color: transparent;
+}
+
+.addProduct > .index > .content > div:last-child .draftDone button:last-child:hover {
+  color: #757575;
+}
+/*# sourceMappingURL=product.css.map */

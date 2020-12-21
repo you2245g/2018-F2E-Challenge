@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="css/componenet.css">
+        <link rel="stylesheet" href="css/step4.css">
+        <title>F2E-Level6</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <div class="deco"></div>
+            <div class="progressBar">
+                <div class="nowCheck"></div>
+                <div class="nowCheck"></div>
+                <div class="nowCheck"></div>
+                <div class="active"></div>
+            </div>
+            <header>
+                <h1>
+                    Payment Method
+                </h1>
+                <h2>
+                    Add your credit card infomation!
+                </h2>
+            </header>
+            <form action="/step4.html">
+                <div class="inputContent">
+                    <label>Card Number</label>
+                    <input name="CreditCard" type="text" placeholder="0000 0000 0000 0000" data-toggle="tooltip" data-placement="right"
+                    @input="getCheckName($event)" @keyup="lengthCheck($event)" title="INVALID NUMBER" maxlength="19">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <i class="fab"></i>
+                </div>
+                <div>
+                    <div>
+                        <label>Cardholder Name</label>
+                        <input placeholder="EXAMPLE NAME" type="text" required>
+                    </div>
+                    <div>
+                        <label>Bank Name</label>
+                        <input placeholder="EXAMPLE BANK" type="text" required>
+                    </div>
+                </div>
+                <div>
+                    <div class="inputContent">
+                        <label>CVV</label>
+                        <input name="CVV" type="text" placeholder="123" data-toggle="tooltip" data-placement="left"
+                        @input="getCheckName($event)" title="FILL TO 3 NUMBER" maxlength="3">
+                        <i class="fas fa-exclamation-triangle"></i>
+                    </div>
+                    <div>
+                        <label>Expire Date</label>
+                        <select data-from="2020" data-to="2050" required>
+                            <option value="" hidden>MM</option>
+                        </select>
+                    </div>
+                    <div>
+                        <select data-from="1" data-to="12" required>
+                            <option value="" hidden>DD</option>
+                        </select>
+                    </div>
+                </div>
+                <button @submit="" class="disable" disabled>
+                    DONE
+                </button>
+            </form>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+        <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="js/all.js"></script>
+    </body>
+</html>

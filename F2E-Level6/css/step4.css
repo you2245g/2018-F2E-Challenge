@@ -1,0 +1,63 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+
+#wrapper > form > div:first-child > i:last-child {
+  font-size: 30px;
+  position: absolute;
+  right: 9px;
+  top: 44px;
+}
+
+#wrapper > form > div:nth-child(2) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#wrapper > form > div:nth-child(2) > div {
+  width: 48%;
+}
+
+#wrapper > form > div:nth-child(3) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+#wrapper > form > div:nth-child(3) > div {
+  width: 30%;
+}
+
+#wrapper > form > div:nth-child(3) > div:nth-child(2) > select {
+  margin-top: unset;
+}
+
+#wrapper > form > div:nth-child(3) > div:nth-child(2) > label {
+  padding: 1px 0 6px;
+}
+
+#wrapper > form > div:nth-child(3) > div:nth-child(3) > select {
+  margin-top: 31px;
+}
+/*# sourceMappingURL=step4.css.map */

@@ -1,0 +1,26 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Roboto-Light.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+
+#wrapper > main * {
+  text-align: center;
+}
+
+#wrapper > main > p i {
+  font-size: 300px;
+  color: #BEE1FF;
+}
+
+#wrapper > main h3 {
+  margin-top: 40px;
+  color: #0275D8;
+  font-size: 20px;
+  font-family: "title";
+}
+/*# sourceMappingURL=stepComplete.css.map */

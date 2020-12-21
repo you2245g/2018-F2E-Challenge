@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="css/frame.css">
+        <link rel="stylesheet" href="css/product.css">
+        <title>F2E-Level3</title>
+    </head>
+    <body>
+        <div id="wrapper">
+            <header>
+                <nav>
+                    <h1>
+                        <a style="color: white;" href="index.html">
+                        Shoptime
+                        </a>
+                    </h1>
+                    <div @click="toggle()" class="navBar">
+                        <div></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="index.html">
+                            HOME
+                            </a>
+                        </li>
+                        <li>
+                            <a href="orders.html">
+                            ORDERS
+                            </a>
+                        </li>
+                        <li>
+                            <a class="active" href="product.html">
+                            PRODUCT
+                            </a>
+                        </li>
+                    </ul>
+                    <h2>ADMIN</h2>
+                </nav>
+            </header>
+            <div class="index">
+                <div class="info">
+                    <label>
+                        <input type="checkbox">
+                        <span></span>
+                        <i @click.prevent="clickBlock()" class="fas fa-caret-down"></i>
+                        <div @click.prevent="toggleDataSelect($event)" class="clickList">
+                            <p v-for="(val,key) in toggleData">
+                                {{ val }}
+                            </p>
+                        </div>
+                    </label>
+                    <button @click="addProduct()">
+                        ADD NEW PRODUCT
+                        <i class="fas fa-plus"></i>
+                    </button>
+                </div>
+                <!--table內容欄-->
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Product</th>
+                            <th>Original</th>
+                            <th>Discount</th>
+                            <th>Size</th>
+                            <th>Color</th>
+                            <th>Inventory</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody @click="statusChange($event)">
+                        <!--
+                        <tr>
+                            <td>
+                                <label>
+                                    <input type="checkbox">
+                                    <span></span>
+                                </label>
+                                <div>
+                                    <img src="img/index01.png">
+                                </div>
+                                <p>Mauris non tem.</p>
+                            </td>
+                            <td>$2,200</td>
+                            <td>$2,200</td>
+                            <td colspan="3">
+                                <div class="item">
+                                    <div>
+                                        L
+                                    </div>
+                                    <div>
+                                        <span>Gray</span><br>
+                                        <span class="lastSpan">Black</span>
+                                    </div>
+                                    <div class="i">
+                                        <span>15</span><br>
+                                        <span class="lastSpan">20</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div>
+                                        L
+                                    </div>
+                                    <div>
+                                        <span>Gray</span><br>
+                                        <span class="lastSpan">Black</span>
+                                    </div>
+                                    <div class="i">
+                                        <span>15</span><br>
+                                        <span class="lastSpan">20</span>
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div>
+                                        L
+                                    </div>
+                                    <div>
+                                        <span>Gray</span><br>
+                                        <span class="lastSpan">Black</span>
+                                    </div>
+                                    <div class="i">
+                                        <span>15</span><br>
+                                        <span class="lastSpan">20</span>
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="select">
+                                    <p class="Unpaid">
+                                        Unpaid
+                                        <i class="fas fa-caret-down"></i>
+                                    </p>
+                                    <div class="list">
+                                        <p data-name="Paid" data-num="0">Paid</p>
+                                        <p data-name="Unpaid" data-num="0" class="active">Unpaid</p>
+                                        <p data-name="Shipping" data-num="0">Shipping</p>
+                                        <p data-name="Done" data-num="0">Done</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>                        
+                        -->
+                    </tbody>
+                </table>
+                <!--分頁欄-->
+                <div class="pagination" @click="changePage($event)">
+                    <!--
+                    <div>1</div>
+                    -->
+                </div>
+            </div>
+            <!--點按上傳欄-->
+            <div class="addProduct">
+                <div class="index">
+                    <div class="title">
+                        <p>ADD NEW PRODUCT</p>
+                        <i @click="clickHide()" class="fas fa-times"></i>
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <div class="upLoadArea">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                Drag an image or click here to upload…
+                            </div>
+                            <div class="picUpLoad">
+                                <div style="background-image:url(img/index01.png)">
+                                </div>
+                                <div style="background-image:url(img/index02.png)">
+                                </div>
+                                <div  style="background-image:url(img/index03.png)">
+                                </div>
+                                <div style="background-image:url(img/index03.png)">
+                                </div>
+                                <div style="background-image:url(img/index03.png)">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right">
+                            <h4>Product Discription</h4>
+                            <input class="productName" type="text" placeholder="Product Name">
+                            <textarea type="text" placeholder="add some description...">
+
+                            </textarea>
+                            <h4>Price</h4>
+                            <div class="price rowInput">
+                                <p>Original</p>
+                                <input type="text" placeholder="$3,200">
+                                <p>Discount</p>
+                                <input type="text" placeholder="$2,800">
+                            </div>
+                            <h4 class="h4Margin">Specification</h4>
+                            <div class="spec rowInput">
+                                <p>Size</p>
+                                <select>
+                                    <option value="L">L</option>
+                                    <option value="S">S</option>
+                                    <option value="M">M</option>
+                                </select>
+                                <p>Color</p>
+                                <input type="text">
+                                <p>Inventory</p>
+                                <input type="text">
+                            </div>
+                            <button @click="addSpec()" class="addSpec">
+                                ADD NEW SPECIFICATION
+                                <i class="fas fa-plus"></i>
+                            </button>
+                            <div class="draftDone">
+                                <button>PUBLISH</button>
+                                <button>SAVE DRAFT</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.0/axios.min.js'></script>
+        <script src="js/product.js"></script>
+    </body>
+</html>
+

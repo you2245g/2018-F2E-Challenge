@@ -1,0 +1,322 @@
+@import '../scss/allMix.scss';
+
+
+@font-face{
+    font-family: 'title';
+    src: url('../font/RacingSansOne-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'subTitle';
+    src: url('../font/Roboto-Bold.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'text';
+    src: url('../font/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face{
+    font-family: 'italic';
+    src: url('../font/Roboto-Italic.ttf') format('truetype');
+}
+
+body{
+    @include color(black,#F2F2F2);
+}
+
+//header
+header{
+        > h1{
+            font-family: 'title';
+            letter-spacing: 1px;
+            font-size: 30px;
+            //padding-left: 5%;
+            &:hover{
+                cursor: pointer;
+                color: #F2F2F2;
+            }
+        }
+        > .box{
+            //padding-left: 15%;
+            //width: 500px;
+            .icon{
+                padding-right: 2%;
+                &:hover{
+                    cursor: pointer;
+                    color: #F2F2F2;
+                }
+            }
+            input { 
+                @include color(white,transparent);
+                padding-right: 1%;
+                width: 91%;
+                outline: none;
+                &::placeholder{
+                    color: white;
+                }
+            }
+            > div{
+                @include outward(100%,1px);
+                background-color: white;
+                margin-top: 5px;
+            }
+        }
+}
+
+//aside
+aside{
+    float: left;
+    @include color(black,#EBEBEB);
+    width: 30%;
+    //margin-left: 3%;
+    > div{
+        border-bottom: 1px solid #D7D7D7 ;
+        //padding: 20px 10%;
+        //標題
+        h2{
+            @include font(20px,$title);
+            padding-bottom: 20px;
+            &:hover{
+                color: #9B9B9B;
+                cursor: pointer;
+            }
+        }
+        //顯示/隱藏按鈕
+        span{
+            color: #9B9B9B;
+            font-size: 15px;
+            float: right;
+        }
+        //選單
+        select{
+            @include outward(100%, 40px);
+        }
+        &:nth-child(2){ 
+            input, p{
+                margin-top: 10px;
+            }        
+            p{
+                @include font(16px, $paragraph);
+                width: 20%;
+                padding:8px 15px 0 0;
+                float: left;
+                text-align: right;
+            }
+            input{
+                @include outward(80%,40px);
+                padding-left: 16px;
+            }
+        }
+        &:nth-child(3){
+            p{
+                font-size: 16px;
+            }
+            input{
+                @include outward(16px,16px);
+                margin-right: 10px;
+                float: left;
+            }
+        }
+    }
+
+
+}
+
+//section
+section{
+    float: left;
+    //搜尋結果
+    .searchResponse{
+        font-family: $paragraph;
+        span{
+            font-family: $title;
+            padding: 0 3px;
+            color: $mainColor;
+        }
+    }
+
+    //搜尋標籤
+    .selectBoard{
+        //font-size: 16px;
+        font-family: $label;
+        color: $mainColor;
+        @include flex(row);
+        flex-wrap: wrap;
+        > div{
+            //padding: 10px;
+            //border-radius: 16px;
+            margin-top: 10px;
+            border: 1px solid $mainColor;
+            width: fit-content;
+            i{
+                padding-left: 5px;
+            }
+            &:nth-child(n+2){
+                margin-left: 10px;
+            }
+            &:hover{
+                cursor: pointer;
+                @include color(white,$mainColor);
+            }
+        }
+    }
+    
+    //內容框
+    .content{
+        .block{
+            &:hover{
+                cursor: pointer;
+                box-shadow:0px 0px 9px grey;
+            }
+            background-color: white;
+            width: 100%;
+            margin-top: 20px;
+            > div{    
+                &:nth-child(1){
+                    background-position: center center;
+                    background-size: cover;
+                    background-repeat: no-repeat;
+                }
+                &:nth-child(2){
+                    h3{ 
+                        padding-top: 25px;
+                        color: $mainColor;
+                        @include font(24px,$title);
+                    }
+                }
+            }
+        }
+    }
+
+    //分頁鍵
+    .pagination{
+        > div{
+            &:hover{
+                cursor: pointer;
+                @include color(white,$mainColor);
+            }
+            float: left;
+            margin: 30px 0px;
+            @include outward(40px,40px);
+            @include font(16px,'text');
+            @include color($mainColor, white);
+            border: 1px #D7D7D7 solid;
+            text-align: center;
+            line-height: 40px;
+        }
+        .active{
+            @include color(white,$mainColor);
+        }
+    }
+}
+
+
+//detail
+
+.detail{
+    float: left;
+    padding: 0 40px;
+    .breadCrumbs{
+        height: 50px;
+        @include font(16px,'text');
+        @include color(grey,#EBEBEB);
+        margin: 24px 0;
+        padding-left: 20px;
+        line-height: 50px;
+        span{
+            &:first-child{
+                color: $mainColor;
+                padding-right: 5px;
+                &:hover{
+                    cursor: pointer;
+                    color: grey;
+                }
+            }
+            &:last-child{
+                padding-left: 5px;
+            }
+        }
+    }
+    .detailContent{
+        @include color(black,white);
+        .imgBack{
+            height: 350px;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        .detailArticle{
+            > h3{
+                padding:30px 0 27px;
+                color: $mainColor;
+            }            
+            .info{
+                >span{
+                    &:nth-child(n+2){
+                        display: block;
+                        line-height: 15px;
+                    }
+                }
+            }            
+            .Description{
+                padding-bottom: 30px;
+            }
+        }
+    }
+    .backKey{
+        margin-bottom: 30px;
+        float: right;
+        text-align: center;
+        line-height: 30px;
+        @include color(grey,#EBEBEB);
+        @include font(16px,'text');
+        @include outward(100px,30px);
+        &:hover{
+            @include color(white,$mainColor);
+            transition: .2s;
+        }
+    }
+}
+
+
+//共用css區(for section > .content內容框 & .detail內容框)
+
+//tagName
+.tagName{
+    margin-bottom: 20px;
+    > span{
+        @include font(16px,$label);
+        @include color(white,#D7D7D7);
+        padding: 5px 20px;
+        border-radius: 20px;
+        &:hover{
+            cursor: pointer;
+            background-color: $mainColor;
+        }
+    }
+}
+//資訊列（地點/電話/開放時間）
+.info{
+    @include font(16px,$paragraph);
+    color: #9B9B9B;
+    span{
+        line-height: 1.4em;
+        a{
+            color: #9B9B9B;
+            &:hover{
+                cursor: pointer;
+                color: $mainColor;
+            }
+        }
+    }
+}
+
+//內文區
+.Description{
+    word-break: normal;
+    text-indent: 2em;
+    line-height: 1.5em;
+    margin: 16px 0 20px;
+    @include font(16px,$paragraph);
+}

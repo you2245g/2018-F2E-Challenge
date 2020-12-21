@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>F2E-Level2</title>
+        <link rel="stylesheet" href="fontawesome-free/css/all.css">
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/jquery-ui.min.css">
+        <link rel="stylesheet" href="css/all.css">
+        <link rel="stylesheet" href="css/allResponsive.css">
+    </head>
+    <body>
+        <div id="wrapper">
+            <!--header-->
+            <header>
+                <h1 data-name="back" @click="backHome($event)">HaveFun</h1>
+                <div class="box">
+                    <span class="icon">
+                        <i class="fa fa-search"></i>
+                    </span>
+                    <input type="search" placeholder="Explorer your own activites"> 
+                    <div></div>
+                </div>
+            </header>
+            <!--aside-->
+            <aside>
+                <div>
+                    <h2 @click="tableKeyEvent($event)" data-num='0'>
+                        Location
+                        <span>
+                            <i data-num='0' class="fa fa-plus"></i>
+                        </span>
+                    </h2>
+                    <div>
+                        <select name="a" id="selectZone" @change="filterChange($event)">
+                            
+                        </select>
+                    </div>
+                </div>
+                <div>
+                    <h2 @click="tableKeyEvent($event)" data-num='1'>
+                        Date
+                        <span>
+                            <i data-num='1' class="fa fa-plus"></i>
+                        </span>
+                    </h2>
+                    <div>
+                        <p>from</p><input @click="datePick" class="dateChoose" readonly="readonly" type="text"><br>
+                        <p>to</p><input @click="datePick" class="dateChoose" readonly="readonly" type="text">
+                    </div>
+                </div>
+                <div>
+                    <h2 @click="tableKeyEvent($event)" data-num='2'>
+                        Categories
+                        <span>
+                            <i data-num='1' class="fa fa-plus"></i>
+                        </span>
+                    </h2>
+                    <div>
+                        <input v-model="filterSelect" type="checkbox" name="filter" value="娛樂" checked><p>娛樂</p><br>
+                        <input v-model="filterSelect" type="checkbox" name="filter" value="教育"><p>教育</p><br>
+                        <input v-model="filterSelect" type="checkbox" name="filter" value="餐廳"><p>餐廳</p><br>
+                        <input v-model="filterSelect" type="checkbox" name="filter" value="宗教場所"><p>宗教場所</p><br>
+                        <input v-model="filterSelect" type="checkbox" name="filter" value="戶外"><p>戶外</p>
+                    </div>
+                </div>                
+            </aside>
+            <!--section-->
+            <section>
+                <p class="searchResponse">
+                    Showing <span v-text="searchResult"></span> results by
+                </p>
+                <div class="selectBoard" @click="deleteSelect($event)">
+                    <!--
+                    <div>
+                        Entertainment
+                        <i class="far fa-times-circle"></i>
+                    </div>
+                    -->
+                </div>
+                <div @click="showDetail($event)" class="content">
+                    <!--
+                    block
+                    <div class="block">
+                        <div style="background-image: url(img/img1.jpg);">
+                            <div>
+                                詳細說明
+                            </div>
+                        </div>
+                        <div>
+                            <h3>Kogi Cosby</h3>
+                            <p class="Description">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt, provident consequuntur ex nesciunt quo molestiae? Dolorum labore ipsa, accusantium, veniam architecto odit o
+                            </p>
+                            <p class="tagName">
+                                <span>Entertainment</span>
+                                <span>Entertainment</span>
+                            </p>
+                            <p class="info">
+                                <span class="Zone">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    kaoHsiung
+                                </span>
+                                <span class="Tel">
+                                    <i class="fas fa-phone"></i>
+                                    077222222
+                                </span>
+                                <span class="Opentime">
+                                    <i class="far fa-calendar-alt"></i>
+                                    2019/10/10
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    block
+                    -->
+                </div>
+                <div class="pagination" @click="changePage($event)">
+                </div>
+            </section>
+            <!--detail-->
+            <div class="detail" @click="backHome($event)">
+                <!--
+                <div class="breadCrumbs">
+                    <span data-name="back">Explore</span>
+                    /
+                    <span class="placeName">國父紀念館</span>
+                </div>
+                <div class="detailContent">
+                    <div class="imgBack" style="background-image: url(aaa.jpg);">
+                    </div>
+                    <div class="detailArticle">
+                        <h3>國父紀念館</h3>
+                        <p class="tagName">
+                            <span>Entertainment</span>
+                        </p>
+                        <p class="info">
+                            <span class="Zone">
+                                <a href="#">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    kaoHsiung
+                                </a>
+                            </span>
+                            <span class="Tel">
+                                <a href="#">
+                                    <i class="fas fa-phone"></i>
+                                    07-7222222
+                                </a>
+                            </span>
+                            <span class="Opentime"><br>
+                                <i class="far fa-calendar-alt"></i>
+                                2019/10/10
+                            </span>
+                        </p>
+                        <div class="Description">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel nostrum quidem laudantium vitae labore expedita libero dicta error sed amet! Consequuntur nulla ea necessitatibus hic autem rem, dolorem doloremque molestiae.
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eveniet reprehenderit itaque, illum accusamus magni eligendi dolores incidunt voluptates, possimus consequuntur repellendus sit inventore ea voluptatibus exercitationem id maxime neque nobis!
+                        </div>
+                    </div>
+                </div>
+                <div class="backKey" data-name="back">
+                    回上一頁
+                </div>
+                -->
+            </div>
+        </div>
+
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.8/vue.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/axios/0.9.0/axios.min.js'></script>
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+        <script src="js/jquery-ui.min.js"></script>
+        <script src="js/all.js"></script>
+    </body>
+</html>

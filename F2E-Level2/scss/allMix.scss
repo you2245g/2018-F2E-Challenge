@@ -1,0 +1,29 @@
+@mixin flex($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+@mixin outward($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin color($frontColor,$backColor) {
+    color: $frontColor;
+    background-color: $backColor;
+}
+
+@mixin font($frontSize,$fontFamily) {
+    font-size: $frontSize;
+    font-family: $fontFamily;
+}
+
+//color
+$headerBackgroundColor: #7828B4;
+$mainColor: #9013FE;
+
+
+//font
+$title:'subTitle';
+$paragraph:'text';
+$label:'italic'

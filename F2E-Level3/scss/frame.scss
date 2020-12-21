@@ -1,0 +1,267 @@
+@import '../scss/allMix.scss';
+
+
+body{
+    @include color($black,$greyLv4);
+}
+
+header{
+    width: 100%;
+    @include color($white,$black);
+    @include font('16px',$title);
+    > nav{
+        &:after{
+            content:"";
+            clear:both;
+            display:table;
+        }
+        *{
+            line-height: 70px;
+            cursor: pointer;
+            &:hover{
+                transition: .3s;
+            }
+        }
+        h1{
+            font-size: 24px !important;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+
+    nav{
+        width: 100%;
+        clear: both;
+        h1{
+            float: left;
+            padding-left: 3%;
+            &:hover{
+                color: $greyLv2;
+            }
+        }
+        h2{
+            display: none;
+        }
+        .navBar{
+            float: right;
+            margin-right: 3%;
+            @include outward(70px,50px);
+            margin-top: 17px;
+            > div{
+                @include outward(50%,2px);
+                background-color: white;
+                margin: 0 auto;
+                margin-top: 7px;
+            }
+        }
+        ul{
+            display: none;
+            padding-top: 70px;
+            li a{
+                &:first-child{
+                    border-top: $greyLv1 1px solid ;
+                }
+                display: block;
+                @include color($white,$black);
+                line-height: 50px;
+                text-align: center;
+                @include outward(100%,50px);
+                &:hover{
+                    @include color($white,$greyLv1);
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+
+    nav{
+        width: 100%;
+        //padding: 0 3%;
+        *{
+            &:hover{
+                color: $greyLv2;
+            }
+        }
+        h1{
+            padding-left: 3%;
+        }
+        h1, ul{
+            float: left;
+            li{ 
+                display: inline-block;
+                &:nth-child(1){
+                    margin-left: 30px;
+                }
+                a{
+                    display: block;
+                    width: 70px;
+                    text-align: center;
+                    color: white;
+                    margin: 0 10px;
+                    position: relative;
+                    &.active, &:hover{
+                        &:after{
+                            content: '';
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            @include outward(100%,3px);
+                            background-color: $greyLv2;
+                            opacity: 1;
+                        } 
+                    }
+                }
+            }
+        }
+        h2{
+            float: right;
+            padding-right: 3%;
+        }
+    }
+}
+
+@media (min-width: 1200px) {
+
+    nav{
+        width: $maxWidth;
+        margin: 0 auto;
+    }
+
+}
+
+
+//主要內容 
+@media (max-width: 1199px) {
+
+    .index{
+        max-width: 100%;
+        margin: 0 3%;
+    } 
+
+
+}
+
+@media (min-width: 1200px) {
+
+
+    .index{
+        max-width: 1075px;
+        margin: 0 auto;
+    }
+
+}
+
+
+//分頁欄目 
+.pagination{
+    margin: 20px 0;
+    float: right;
+    > div{
+        &:hover{
+            cursor: pointer;
+            @include color(white,$black);
+        }
+        float: left;
+        margin: 30px 0px;
+        @include outward(40px,40px);
+        @include font(16px,'text');
+        @include color($black, white);
+        border: 1px $greyLv2 solid;
+        text-align: center;
+        line-height: 40px;
+    }
+    .active{
+        @include color(white,$black);
+    }
+}
+
+
+//共用勾選框
+label{
+    cursor: pointer;
+    input{
+        position: absolute;
+        left: 0px;
+        top: 0;
+        z-index: 1;
+        opacity: 0;
+    }
+    input[type=checkbox]:checked 
+        + span::before {
+        visibility: visible;
+        color: white;
+    }
+    input[type=checkbox]:checked 
+        + span{
+        background-color: black;
+    }
+    span{
+        position: relative;
+        z-index: 2;
+        display: inline-block;
+        @include outward(20px,20px);
+        border: 1px $black solid;
+        border-radius: 2px;
+        &:before{
+            content: "\f00c";
+            font-family: "Font Awesome 5 Free"; 
+            font-weight: 900; 
+            line-height: 20px;
+            text-align: center;
+            padding-left: 3px;
+            font-size: 14px;
+            visibility: hidden;
+        }
+        &:hover{
+            border: 1px solid $greyLv1;
+            background-color: $greyLv3;
+        }
+    }
+}
+
+
+//status顏色設定
+/*
+Paid = $mainGreen;
+Unpaid = $greyLv1;
+Shipping = $mainYellow;
+Done = $mainBlue;
+*/
+
+.Paid{
+    @include color(white,$mainGreen);
+}
+
+.Unpaid{
+    @include color(white,$greyLv2);    
+}
+
+.Shipping{
+    @include color(white,$mainYellow);
+}
+
+.Done{
+    @include color(white,$mainBlue);
+}
+
+// for unuse class
+.unuse{
+    *{
+        color: $greyLv2 !important;
+    }
+    > td{
+        &:last-child{
+            > div{
+                > p{
+                    color: white !important;
+                    > i{
+                        color: white !important;
+                    }
+                }  
+            }
+        }  
+    }
+}

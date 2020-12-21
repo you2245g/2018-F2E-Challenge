@@ -1,0 +1,10 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+/*# sourceMappingURL=allMix.css.map */

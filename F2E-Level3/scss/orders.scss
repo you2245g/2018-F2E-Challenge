@@ -1,0 +1,205 @@
+@import '../scss/allMix.scss';
+
+//上面選框
+.info{
+    @include flex(row);
+    justify-content: space-between;
+    align-items: center;
+    margin: 30px 0 15px;
+    position: relative;
+    font-size: 16px;
+    //左按鈕區塊
+    label{
+        @include outward(43px,16px);
+        position: relative;
+        > i{
+            padding-left: 5px;
+        }
+        > .clickList{
+            display: none;
+            position: absolute;
+            z-index: 3;
+            width: 150px;
+            border-radius: 4px;
+            margin-top: 6px;
+            background-color: white;
+            text-align: center;
+            line-height: 40px;
+            box-shadow: 1px 2px 10px 0 $greyLv1;
+            > p{
+                &:hover, &.active{
+                    @include color($white,$black);
+                }
+            }
+        }
+    }
+
+    //右按鈕區塊
+    button{
+        @include color($black,transparent);
+        @include outward(192px,34px);
+        @include flex(row);
+        align-items: center;
+        justify-content: flex-end;
+        outline: none;
+        cursor: pointer;
+        i{
+            font-size: 12px !important;
+            padding: 4px 0 0 10px;
+        }
+        &:hover{
+            color: $greyLv1;
+            .hoverList{
+                display: block;
+            }
+        }
+        .hoverList{
+            display: none;
+            position: absolute;
+            right: 0;
+            top:100%;
+            z-index: 2;
+            @include color($black,$white);
+            width: 170px;
+            box-shadow: 1px 2px 10px 0 $greyLv1;
+            padding: 5px 0;
+            > p{
+                text-align: left;
+                padding: 10px 0; 
+                > label{
+                    padding: 0 10px;
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
+
+table{
+    width: 100%;
+    thead{
+        @include color($black,$white);
+        @include font(16px,$subTitle);
+        > tr{
+            height: 40px;
+            > th{
+                //border: 1px red solid;
+                text-align: center;
+                text-align: left;
+                &:nth-child(1){
+                    padding-left: calc(1.5% + 32px);
+                    width: 19%;
+                }       
+                &:nth-child(2){
+                    width: 18%;
+                }       
+                &:nth-child(3){
+                    width: 7%;
+                    padding-right: 3%;
+                    text-align: right;
+                }
+                &:nth-child(4),&:nth-child(5){
+                    width: calc(20% / 2);
+                }
+                &:nth-child(6){
+                    width: 16%;
+                }
+                &:nth-child(7){
+                    width: 11%;
+                    padding-right: 4%;
+                }
+            }
+        }
+    }
+    tbody{
+        @include font(15px,$text);
+        line-height: 24px;
+        > tr{
+            vertical-align: top;
+            &:nth-child(2n){
+                background-color: $greyLv3;
+            }
+            td{
+                padding: 12px;
+                padding-left: 0px;
+                &:nth-child(1){
+                    line-height: 20px !important;
+                    padding-left: 1.5%;
+                    > label{
+                        padding-right: 10px;
+                        > span{
+                            line-height: 10px !important;
+                            background-color: $white;
+                            border: 1px solid $white;
+                        }
+                    }
+                }
+                &:nth-child(2){
+                    padding-top: unset;
+                    > .item{
+                        width: 85%;
+                        padding: 10px 0;
+                        &:nth-child(n+2){
+                            border-top: 1px solid $white;
+                        }
+                        > div{
+                            @include flex(row);
+                            justify-content: space-between;
+                            > span{
+                                &:first-child{
+                                    color: $greyLv1;
+                                }
+                            }
+                        }
+                    }
+                }
+                &:nth-child(3){
+                    text-align: right;
+                    padding-right: 33px;
+                }
+                &:last-child{
+                    .select{
+                        width: 120px;
+                        line-height: 34px;
+                        padding-bottom: 6px;
+                        text-align: center;
+                        position: relative;
+                        cursor: pointer;
+                        &:hover{
+                            .list{
+                                display: block;
+                            }
+                        }
+                        > p{
+                            border-radius: 4px;
+                            i {
+                                padding-left: 5px;
+                            }
+                        }
+                        .list{
+                            position: absolute;
+                            z-index: 4;
+                            top: 100%;
+                            width: 100%;
+                            box-shadow: 1px 2px 10px 0 $greyLv1;
+                            border-radius: 4px;
+                            background-color: $white;
+                            display: none;
+                            cursor: pointer;
+                            *{
+                                &.active, &:hover{
+                                    @include color($white,$black);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

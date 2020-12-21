@@ -1,0 +1,83 @@
+@font-face {
+  font-family: 'title';
+  src: url("../font/Roboto-Bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: 'text';
+  src: url("../font/Roboto-Regular.ttf") format("truetype");
+}
+
+.backImage {
+  background-position: center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+}
+
+.backImage:before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background-color: rgba(80, 227, 194, 0.5);
+  display: none;
+}
+
+.backImage:hover:before {
+  display: block;
+}
+
+.mainTitle {
+  font-size: 48px;
+}
+
+.mainTitle:before, .mainTitle:after {
+  content: attr(data-title);
+  position: absolute;
+  left: 0;
+  overflow: hidden;
+  height: 20px;
+}
+
+.mainTitle:before {
+  top: -13px;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.mainTitle:after {
+  top: -18px;
+  color: rgba(0, 0, 0, 0.1);
+}
+
+.subTitle {
+  font-size: 24px;
+}
+
+.decoSolid {
+  background-color: #50E3C2;
+  z-index: -1;
+}
+
+.decoFrame {
+  border: #50E3C2 20px solid;
+  z-index: -2;
+}
+
+.serial {
+  font-size: 48px;
+}
+
+.slashBlock {
+  width: 240px;
+  height: 100px;
+  background-image: url("../img/patternUnit.png");
+  background-repeat: repeat;
+  background-size: contain;
+}
+
+.decoTitle {
+  font-size: 48px;
+}
+/*# sourceMappingURL=component.css.map */
