@@ -92,34 +92,33 @@ aside{
         select{
             @include outward(100%, 40px);
         }
-        &:nth-child(2){ 
-            input, p{
-                margin-top: 10px;
-            }        
-            p{
-                @include font(16px, $paragraph);
-                width: 20%;
-                padding:8px 15px 0 0;
-                float: left;
-                text-align: right;
-            }
-            input{
-                @include outward(80%,40px);
-                padding-left: 16px;
-            }
+    }
+    .datePicker{ 
+        input, p{
+            margin-top: 10px;
+        }        
+        p{
+            @include font(16px, $paragraph);
+            width: 20%;
+            padding:8px 15px 0 0;
+            float: left;
+            text-align: right;
         }
-        &:nth-child(3){
-            p{
-                font-size: 16px;
-            }
-            input{
-                @include outward(16px,16px);
-                margin-right: 10px;
-                float: left;
-            }
+        input{
+            @include outward(80%,40px);
+            padding-left: 16px;
         }
     }
-
+    .filterSelect{
+        p{
+            font-size: 16px;
+        }
+        input{
+            @include outward(16px,16px);
+            margin-right: 10px;
+            float: left;
+        }
+    }
 
 }
 

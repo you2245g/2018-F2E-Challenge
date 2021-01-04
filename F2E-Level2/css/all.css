@@ -107,11 +107,11 @@ aside > div select {
   height: 40px;
 }
 
-aside > div:nth-child(2) input, aside > div:nth-child(2) p {
+aside .datePicker input, aside .datePicker p {
   margin-top: 10px;
 }
 
-aside > div:nth-child(2) p {
+aside .datePicker p {
   font-size: 16px;
   font-family: "text";
   width: 20%;
@@ -120,17 +120,17 @@ aside > div:nth-child(2) p {
   text-align: right;
 }
 
-aside > div:nth-child(2) input {
+aside .datePicker input {
   width: 80%;
   height: 40px;
   padding-left: 16px;
 }
 
-aside > div:nth-child(3) p {
+aside .filterSelect p {
   font-size: 16px;
 }
 
-aside > div:nth-child(3) input {
+aside .filterSelect input {
   width: 16px;
   height: 16px;
   margin-right: 10px;
